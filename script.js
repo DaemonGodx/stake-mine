@@ -5,7 +5,7 @@ var mines = new Set();
 var count = 0;
 var gameover = false;
 var wallettxt=document.querySelector(".amt");
-var wallet = 5;
+var wallet = 50;
   for (var i = 0; i < a; i++) {
         const tile = document.createElement('div');
         tile.classList.add('tile');
