@@ -5,26 +5,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <link rel="stylesheet" href="style.css">
- 
 </head>
 
 <body>
-  
   <div class="navbar">
     <img class="img1" src="logo.svg" alt="">
+    <div class="wallet"><span class="amt" value="5.000">5.000</span><span class="txt">Wallet </span></div>
     <div class="navbut">
       <button class="search"><span><img src="search.svg" alt=""></span>Search<span></button>
       <button class="profile"><span><img src="profile.svg" alt=""></span></button>
     </div>
   </div>
   <div class="main">
-    <div class="left"></div>
+    <div class="left">
+      <label for="bet-amount">Bet Amount:</label>
+      <input type="number" id="bet" value="0.0000">
+
+      <label for="multiplier">Multiplier:</label>
+      <select id="multiplier">
+        <option value="1.5">1.5x</option>
+        <option value="2">2x</option>
+        <option value="3">3x</option>
+        <option value="5">5x</option>
+      </select>
+
+      <button id="bet-button">Bet</button>
+    </div>
     <div class="right">
       <div class="grids" id="grid">
       </div>
     </div>
   </div>
-   <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
-
 </html>
