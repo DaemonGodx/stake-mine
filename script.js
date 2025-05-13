@@ -34,7 +34,7 @@ function startGame() {
         grid.appendChild(tile);
     }
 
-    while (mines.size < 7) {
+    while (mines.size < 5) {
         var mine = Math.floor(Math.random() * a);
         mines.add(mine);
     }
