@@ -7,6 +7,7 @@ var wallettxt=document.querySelector(".amt");
 var wallet = 5;
   for (var i = 0; i < a; i++) {
         const tile = document.createElement('div');
+        tile.classList.add('tile');
         grid.appendChild(tile);
     }
 
@@ -33,13 +34,13 @@ function startGame() {
         tile.classList.add('tile');
         grid.appendChild(tile);
     }
-
     while (mines.size < 5) {
         var mine = Math.floor(Math.random() * a);
         mines.add(mine);
     }
 
     const tiles = document.querySelectorAll('.tile');
+     
     tiles.forEach((tile, index) => {
         tile.addEventListener("click", () => {
             if (gameover) return;
