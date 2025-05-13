@@ -1,3 +1,4 @@
+
 const grid = document.getElementById('grid');
 var a = 25;
 var mines = new Set();
