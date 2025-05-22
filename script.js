@@ -50,14 +50,14 @@ function startGame() {
     setButtonState(betButton, false);
     if (bet > wallet || bet < 0) {
         alert("Invalid bet amount!");
-        setButtonState(betButton, true);
+        setButtonState(betButton, false);
     }
     else   if (wallet < 0) {
         {
         wallet = 0;
         localStorage.setItem("wallet", wallet);
         wallettxt.textContent = wallet.toFixed(3);
-        setButtonState(betButton, true);
+        setButtonState(betButton, false);
     }
     }
     else {
