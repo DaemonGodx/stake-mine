@@ -46,26 +46,9 @@ function startGame() {
     mines.clear();
     count = 0;
     gameover = false;
+    let validBet = true;
     setButtonState(cashout, false);
     setButtonState(betButton, false);
-    if (bet > wallet || bet < 0) {
-        alert("Invalid bet amount!");
-        setButtonState(betButton, false);
-    }
-    else   if (wallet < 0) {
-        {
-        wallet = 0;
-        localStorage.setItem("wallet", wallet);
-        wallettxt.textContent = wallet.toFixed(3);
-        setButtonState(betButton, false);
-    }
-    }
-    else {
-        wallet = wallet - bet;
-    localStorage.setItem("wallet", wallet);
-}
-  
-    wallettxt.textContent = wallet.toFixed(3);
     for (var i = 0; i < a; i++) {
         const tile = document.createElement('div');
         tile.classList.add('tile');
@@ -75,6 +58,24 @@ function startGame() {
         var mine = Math.floor(Math.random() * a);
         mines.add(mine);
     }
+    if (bet > wallet || bet < 0) {
+        alert("Invalid bet amount!");
+        bet = 0;
+        validBet = false;
+        setButtonState(betButton, true);
+
+    }
+    if (wallet < 0) {
+        
+        wallet = 0;
+        localStorage.setItem("wallet", wallet);
+        wallettxt.textContent = wallet.toFixed(3);
+    }
+    wallet = wallet - bet;
+    localStorage.setItem("wallet", wallet);
+    wallettxt.textContent = wallet.toFixed(3);
+    if(validBet){
+    
 
     const tiles = document.querySelectorAll('.tile');
 
@@ -137,7 +138,7 @@ function startGame() {
         });
     });
 }
-
+}
 document.getElementById('bet-button').addEventListener('click', () => {
     startGame();
 });
@@ -161,4 +162,3 @@ function reset()
         mines.clear();
         count = 0;
 }
-
